@@ -23,7 +23,7 @@ def python_grpc_library(**kwargs):
         srcs = [name_pb],
         deps = [
             "@com_google_protobuf//:protobuf_python",
-        ] + grpc_deps,
+        ] + kwargs.get("grpc_deps", grpc_deps),
         imports = [name_pb],
         visibility = kwargs.get("visibility"),
     )
